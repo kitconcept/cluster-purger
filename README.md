@@ -5,7 +5,6 @@ Tool to replicate a Purge request to all instances of Varnish in a cluster.
 ## Supported Clusters
 
 * Docker Compose
-
 * Docker Swarm
 
 
@@ -53,3 +52,11 @@ response = httpx.request(method="PURGE", url="http://localhost:8000/de")
 |PURGER_SERVICE_NAME| Varnish service name in the cluster | `varnish` |  |
 |PURGER_SERVICE_PORT| Service port | `8080` | `80` |
 |PURGER_PUBLIC_SITES| List of public hostnames to send in the Host header | `"['site.example.com', 'cms.example.com']"` |  |
+
+## Credits
+
+[![kitconcept GmbH](https://raw.githubusercontent.com/kitconcept/docker-stack-deploy/main/docs/kitconcept.png)](https://kitconcept.com)
+
+## License
+
+The project is licensed under [MIT License](./LICENSE)
