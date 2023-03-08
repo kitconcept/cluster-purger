@@ -17,7 +17,7 @@ env:
 
 jobs:
 
-  test-codebase:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout codebase
@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.ref == 'refs/heads/main' }}
     needs:
-      - test-codebase
+      - test
 
     steps:
 
