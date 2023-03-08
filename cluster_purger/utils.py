@@ -22,7 +22,7 @@ def name_for_resolution(service_name: str) -> str:
             prefix = "tasks."
         case "compose":
             prefix = ""
-        case other:
+        case other:  # noQA
             # Should log
             prefix = ""
     return f"{prefix}{service_name}"
