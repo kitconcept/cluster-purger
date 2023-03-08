@@ -1,15 +1,8 @@
 name: Test Codebase
 
 on:
-  workflow_dispatch:
   push:
-    paths:
-      - "cluster_purger/**"
-      - "poetry.lock"
-      - ".github/workflows/tests.yml"
-    tags-ignore:
-      - '**'
-
+  workflow_dispatch:
 
 env:
   PACKAGE_PATH: cluster_purger
