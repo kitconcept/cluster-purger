@@ -7,6 +7,8 @@ import dns.resolver
 
 @dataclass
 class PurgeInfo:
+    """Information of Purge requests."""
+
     host: str
     url: str
     http_verb: str
