@@ -1,0 +1,72 @@
+[tool.poetry]
+name = "cluster-purger"
+version = "0.1.0"
+description = "Purge multiple instances of Varnish inside a cluster"
+authors = ["kitconcept GmbH <info@kitconcept.com>"]
+readme = "README.md"
+packages = [{include = "cluster_purger"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+dnspython = "^2.3.0"
+fastapi = "^0.92.0"
+uvicorn = {extras = ["standard"], version = "^0.20.0"}
+dynaconf = "^3.1.12"
+httpx = "^0.23.3"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.2.2"
+pytest-httpx = "^0.21.3"
+pytest-cov = "^4.0.0"
+black = "^23.1.0"
+isort = "^5.12.0"
+flakeheaven = "^3.2.1"
+
+[tool.pytest.ini_options]
+addopts = "--cov-report term-missing --cov=cluster_purger"
+testpaths = [
+    "tests",
+]
+
+[tool.black]
+line-length = 88
+include = '\.pyi?$'
+exclude = '''
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+)
+'''
+
+[tool.isort]
+profile = "black"
+force_alphabetical_sort = true
+force_single_line = true
+lines_after_imports = 2
+line_length = 120
+
+[tool.flakeheaven]
+format="grouped"
+max_line_length=88
+show_source=true
+max-complexity=25
+
+[tool.flakeheaven.plugins]
+pycodestyle = ["+*"]
+pyflakes = ["+*"]
+"flake8-*" = ["+*"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
