@@ -39,10 +39,10 @@ jobs:
         run: poetry run black --check --diff ${{ env.PACKAGE_PATH }}
 
       - name: "iSort"
-        run: poetry isort --check-only ${{ env.PACKAGE_PATH }}
+        run: poetry run isort --check-only ${{ env.PACKAGE_PATH }}
 
       - name: "Flake 8"
-        run: poetry flakeheaven lint ${{ env.PACKAGE_PATH }}
+        run: poetry run flakeheaven lint ${{ env.PACKAGE_PATH }}
 
       - name: "Test Codebase"
         run: poetry run pytest
