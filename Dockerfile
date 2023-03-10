@@ -54,7 +54,7 @@ USER appuser
 ENV PATH="/app/.venv/bin:$PATH"
 
 # Set healthcheck to port 8080
-HEALTHCHECK --interval=5s --timeout=5s --start-period=10s CMD [ -n "$LISTEN_PORT" ] || LISTEN_PORT=80 ; wget -q http://127.0.0.1:"$LISTEN_PORT"/ok -O - | grep OK || exit 1
+HEALTHCHECK --interval=5s --timeout=5s --start-period=30s CMD [ -n "$LISTEN_PORT" ] || LISTEN_PORT=80 ; wget -q http://127.0.0.1:"$LISTEN_PORT"/ok -O - | grep Ok || exit 1
 
 # Run uvicorn
 CMD ["uvicorn", "cluster_purger.app:app", "--host", "0.0.0.0", "--port", "80"]
