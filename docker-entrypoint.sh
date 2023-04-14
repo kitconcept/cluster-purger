@@ -6,8 +6,13 @@ if [ -z "${OTEL_EXPORTER_OTLP_ENDPOINT}" ]; then
   echo "Starting cluster-purger"
   OTEL=""
 else
-  echo "Starting cluster-purger with opentelemetry support"
-  OTEL="opentelemetry-instrument"
+  if [ -z "${OTEL_DEBUG}" ]; then
+    echo "Starting cluster-purger with opentelemetry support"
+    OTEL="opentelemetry-instrument"
+  else
+    echo "Starting cluster-purger with opentelemetry support (DEBUG)"
+    OTEL="opentelemetry-instrument --traces_exporter console"
+  fi
 fi
 echo "======================================================================================="
 

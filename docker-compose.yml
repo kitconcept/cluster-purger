@@ -17,3 +17,5 @@ services:
       PURGER_SERVICE_NAME: varnish
       PURGER_SERVICE_PORT: 80
       PURGER_PUBLIC_SITES: "['site.example.com', 'cms.example.com']"
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://localhost:4317
+      OTEL_DEBUG: True

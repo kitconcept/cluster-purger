@@ -61,6 +61,7 @@ This tool has OpenTelemetry support built-in. To use it, set the following envir
 | --- | --- | --- |
 |OTEL_EXPORTER_OTLP_ENDPOINT| OpenTelemetry endpoint | `http://192.168.1.1:4317` |
 |OTEL_RESOURCE_ATTRIBUTES| Set attributes for OpenTelemetry, i.e. service name | `service.name=cluster-purger` |
+|OTEL_DEBUG| Dump OpenTelemetry traces to console instead of sending it to the server | `True` |
 
 ## Credits
 
