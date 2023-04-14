@@ -9,10 +9,13 @@ packages = [{include = "cluster_purger"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 dnspython = "^2.3.0"
-fastapi = "^0.92.0"
+fastapi = "^0.95.0"
 uvicorn = {extras = ["standard"], version = "^0.20.0"}
 dynaconf = "^3.1.12"
 httpx = "^0.23.3"
+opentelemetry-distro = "^0.38b0"
+opentelemetry-exporter-otlp = "^1.17.0"
+opentelemetry-instrumentation-fastapi = "^0.38b0"
 
 
 [tool.poetry.group.test.dependencies]

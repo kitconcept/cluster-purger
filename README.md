@@ -53,6 +53,15 @@ response = httpx.request(method="PURGE", url="http://localhost:8000/de")
 |PURGER_SERVICE_PORT| Service port | `8080` | `80` |
 |PURGER_PUBLIC_SITES| List of public hostnames to send in the Host header | `"['site.example.com', 'cms.example.com']"` |  |
 
+### OpenTelemetry support
+
+This tool has OpenTelemetry support built-in. To use it, set the following environment variables on your service definition.
+
+| Variable | Description | Example |
+| --- | --- | --- |
+|OTEL_EXPORTER_OTLP_ENDPOINT| OpenTelemetry endpoint | `http://192.168.1.1:4317` |
+|OTEL_RESOURCE_ATTRIBUTES| Set attributes for OpenTelemetry, i.e. service name | `service.name=cluster-purger` |
+
 ## Credits
 
 [![kitconcept GmbH](https://raw.githubusercontent.com/kitconcept/docker-stack-deploy/main/docs/kitconcept.png)](https://kitconcept.com)
